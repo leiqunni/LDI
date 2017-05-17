@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LDI (Logical Disk Indicator)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+<!--
+body {
+	font-size: 10pt;
+	font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", sans-serif;
+	line-height: 1.3em;
+}
+pre {
+	background-color: #f7f7f7;
+	font-family: "Courier New", Consolas, monospace;
+	margin: 4px;
+	padding: 8px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+h1, h2, h3, h4 {
+	margin-top: 20px;
+	margin-bottom: 6px;
+}
+h1 {
+	font-size: 18pt;
+	margin-left: 8px;
+}
+h2 {
+	font-size: 14pt;
+	border-bottom: 1px solid #000;
+	padding-bottom: 4px;
+	margin-left: 24px;
+}
+.p2 {
+	margin-left: 32px;
+}
+ul {
+	margin: 4px;
+	padding: 0;
+}
+table.download {
+	_width: 480px;
+}
+table.download th {
+	background-color: #c0d4ee;
+}
+.navi {
+	font-size: 9pt;
+	border-bottom: 1px solid #000;
+	padding-bottom: 4px;
+}
+.example {
+	font-size: 9pt;
+	color: #999;
+}
+.note {
+	color: #f00;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<div class="navi">
+最終更新日 2015年10月04日
+<a href="http://www.geocities.co.jp/SiliconValley/7773/software/">暗黒時代ソフトウェア</a>
+</div>
+
+<h1>LDI (Logical Disk Indicator)</h1>
+
+<h2>概要</h2>
+<div class="p2">
+論理ディスクの読み書き状況をトレイアイコンに表示するソフトです。<br>
+<a href="http://www.startupgao.net/soft/ds2.html">DiskState</a> を使ってたのですが、
+設定が難しいのと1ドライブで16x16アイコンを使うのが好きくなかったので作りました。<br>
+あと秀Capsか猫まねきとの相性が悪かったのもきっかけ。
+</div>
+
+<h2>スクリーンショット</h2>
+<table class="p2">
+<tr>
+	<td><img src="img/ldi0.png" alt="ドライブをマウスで並べ替えできます"></td>
+	<td><img src="img/ldi1.png" alt="アイコンタクト"></td>
+	<td><img src="img/ldi2.png" width=64 alt="エイリアスの効きは調整できます"></td>
+</tr>
+<tr>
+	<td>メイン画面</td>
+	<td>設定画面</td>
+	<td>通知アイコン</td>
+</tr>
+</table>
+
+<h2>ダウンロード</h2>
+<div class="p2">
+<table class="download">
+<tr>
+	<th>ファイル</th>
+	<th>日時</th>
+	<th>バージョン</th>
+</tr>
+<tr>
+	<td><a href="https://ldi.codeplex.com/">CodePlex LDI.2015.10.04.0.zip</td>
+	<td>2015年10月04日</td>
+	<td>2015.10.04.0</td>
+</tr>
+</table>
+</div>
+
+<h2>動作環境</h2>
+<div class="p2">
+.NET Framework 2.0 以上
+</div>
+
+<h2>インストール</h2>
+<div class="p2">
+適当な場所に展開してください。%LocalAppData%/DarkEra_Software/LDI/ あたりがいいでしょうか。<br>
+レジストリは使いませんが、下記場所に設定ファイルを作ります。<br />
+%LocalAppData%/DarkEra_Software/LDI.exe_Url_<i>&lt;hash&gt;</i>/<i>&lt;version&gt;</i>/user.config<br />
+</div>
+
+<h2 id="uninstall">アンインストール</h2>
+<div class="p2">
+フォルダごと削除して下さい。
+</div>
+
+<h2>使い方</h2>
+<div class="p2">
+起動して設定して下さい。
+</div>
+
+<h2>Skin.ini について</h2>
+<div class="p2">
+Skin.ini で通知アイコンの画像を変更することができます。<br>
+Skin.ini を参照してください。
+</div>
+
+<h2>Lang.ini について</h2>
+<div class="p2">
+言語ファイルです。
+</div>
+
+<h2>設定ファイルについて</h2>
+<div class="p2">
+このソフトでは設定ファイルに<b>IniFile version 1.1</b>を使用しています。
+「そんなのあったっけ？」と思ったあなたは鋭い。なぜなら漏れが作った漏れ漏れ仕様だから。<br>
+<br>
+漏れは「.NETアプリケーションなら設定ファイルはXMLでしょ」と得意げに掲示板に書いてる奴らが鼻持ちならないのです！！
+XMLなんてエディタで書きたくないちゅーの！設定ツールを作りたくないちゅーの！メモ帳でほいほい書けばいいだけのIniファイルが好きなの！<br>
+<br>
+んで、Iniファイルの調べてみると、明確な仕様が無いのです。Win32のAPIの動作が仕様なのかもしれませんが、
+Web 2.0も言ったもん勝ちだったので「IniFile 2.0」を決めちゃえと思いましたが、
+2.0は恐れ多いのでマイナーバージョンアップの1.1にしました。<br>
+<br>
+IniFile 1.1は次のような特徴を持ちます。
+<ul class="p2">
+<li>明文化された仕様
+<li>セクションの入れ子構造（ネスティング）の対応
+<li>ヒアドキュメントの導入
+<li>文字コード（デフォはUTF-8）、読み込み専用、英大小文字無視等のスイッチ
+</ul>
+などです。リファレンス実装はそのうち出します。<br>
+</div>
+
+<h2>ソースコード</h2>
+<div class="p2">
+<a href="http://ldi.codeplex.com/">CpdePlex</a> にソースコードを出してますのでどぞー。
+</div>
+
+<h2>履歴</h2>
+
+<dl>
+<div class="p2">
+
+<dt>2015年10月04日 ver. 2015.10.04.0</dt>
+<dd>
+	<ul>
+		<li>細かい感じの。
+	</ul>
+</dd>
+
+<dt>2013年04月28日 ver. 2013.4.28</dt>
+<dd>
+	<ul>
+		<li>HDDが4台以上表示されなかったバグ修正
+		<li>ツールチップの情報が1ドライブ分しか表示されなかったバグ修正
+		<li>以上、shu さんからのご報告でした。ありがとうございます。
+		<li>トレイアイコンをダブルクリックすると復帰動作の追加</li>
+	</ul>
+</dd>
+
+<dt>2013年03月22日 ver. 2013.3.22</dt>
+<dd>
+	<ul>
+		<li>Lang.ini で多言語化
+		<li>言語ファイルで変更できるようにしますした。デフォは英語。
+	</ul>
+</dd>
+
+<dt>2013年03月16日 ver. 2013.3.16</dt>
+<dd>
+	<ul>
+		<li>スキンファイルのディレクトリ名を間違えていた（脂汗
+		<li>デフォルトスキンのアイコンを変更
+		<li>インターバール毎に StringBuilder を new していたのを .Length = 0 にという地味な高速化
+		<li>日本人なのに全部英語に。時代はパーシャル。そのうち言語ファイルで変更できるようにします。
+	</ul>
+</dd>
+
+<dt>2013年03月09日 ver. 2013.3.9</dt>
+<dd>
+	<ul>
+		<li>まーた全面的に作り直し。
+		<li>バージョンの数字を考えるの面倒なのでリリース数にしたけど、それも面倒なので年月日にした。
+			いなり 2013なんて、いかほど～。
+		<li>実はマウスでドライブの並びを変更できなかったバグ。
+		<li>起動時にドライブがだち上がってないと例外処理とかで落ちるバグ。
+		<li>クラスの作り方と設定ファイルで悶々としていたオナニーバージョンアップです。
+		<li><a href="http://lditfs.codeplex.com/">CpdePlex</a> にソースコードを出してますのでどぞー。
+	</ul>
+</dd>
+
+<dt>2012年06月18日 ver. 12.6.18.0</dt>
+<dd>
+	<ul>
+		<li>全面的に作り直し。
+		<li>PerformanceCounter の Disk Write Bytes/sec を Disk Write/sec と間違えていたのを修正。
+		<li>バージョンの数字を考えるの面倒なのでリリース数にしたけど、それも面倒なので年月日にした。
+			いきなり Version 12 とか、どんだけ～
+	</ul>
+</dd>
+<dt>2010年09月16日 release 4</dt>
+<dd>
+	<ul>
+		<li>INIファイルが存在しない場合既定の設定で起動するように。
+		<li>IniFile11のSaveメソッドのバグ修正。
+	</ul>
+</dd>
+<dt>2010年09月14日 release 3</dt>
+<dd>
+	<ul>
+		<li>掲示板で「最小で起動できないよ－」と教えていただいたので修整（LDIファンさんに感謝！）。
+		<li>UIの変更。
+		<li>プログラムの最適化。
+	</ul>
+</dd>
+<dt>2010年05月30日 release 2</dt>
+<dd>
+	<ul>
+		<li>プログラムの最適化。
+		<li>最小で起動を追加。
+		<li>UIを変更。
+		<li>ドライブを並び替えられるようにした。
+		<li>基本部分は05月09日にできていたがやっと公開。
+	</ul>
+</dd>
+<dt>2010年04月25日 release 1</dt>
+<dd>
+	<ul>
+		<li>基本部分は半年前にできていたがやっと公開。
+	</ul>
+</dd>
+</dl>
+</div>
+
+<h2>連絡先</h2>
+<div class="p2">
+<a href="https://ldi.codeplex.com/">CodePlex LDI (Logical Disk Indicator)</a><br/>
+793 ◆7BJkZFw08A or leiqunni at yahoo.co.jp
+</div>
+
+</body>
+</html>

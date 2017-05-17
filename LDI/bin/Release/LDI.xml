@@ -1,0 +1,342 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LDI
+</name>
+</assembly>
+<members>
+<member name="T:LDI.IniFile11">
+ <summary>
+ IniFile11(IniFile version 1.1) class
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:LDI.IniFile11.IgnoreCase">
+ <summary>
+ Returns a Boolean value indicating the state of the ignoreCase flag.
+ </summary>
+ <remarks>Deffault is True.</remarks>
+</member>
+<member name="F:LDI.IniFile11.RegexOptions">
+ <summary>
+ Regular Expression option.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:LDI.IniFile11.SectionPathDelimiter">
+ <summary>
+ Section path delimiter. 
+ </summary>
+ <remarks>Default is '/'.</remarks>
+</member>
+<member name="F:LDI.IniFile11.NameValueDelimiter">
+ <summary>
+ Key name and value delimiter.
+ </summary>
+ <remarks>Default is '='.</remarks>
+</member>
+<member name="F:LDI.IniFile11.Encoding">
+ <summary>
+ 設定ファイルの文字エンコーディングです。
+ </summary>
+ <remarks>
+ デフォルトは UTF-8 で下記の文字エンコーディングが使えます。
+ IBM037         x-cp20001        IBM01146          iso-8859-1
+ IBM437         x-Chinese-Eten   IBM01147          iso-8859-2
+ IBM500         x-cp20003        IBM01148          iso-8859-3
+ ASMO-708       x-cp20004        IBM01149          iso-8859-4
+ DOS-720        x-cp20005        utf-16            iso-8859-5
+ ibm737         x-IA5            unicodeFFFE       so-8859-6
+ ibm775         x-IA5-German     windows-1250      iso-8859-7
+ ibm850         x-IA5-Swedish    windows-1251      iso-8859-8
+ ibm852         x-IA5-Norwegian  Windows -1252     iso-8859-9
+ IBM855         us-ascii         windows-1253      iso-8859-13
+ ibm857         x-cp20261        windows-1254      iso-8859-15
+ IBM00858       x-cp20269        windows-1255      x-Europa
+ IBM860         IBM273           windows-1256      iso-8859-8-i
+ ibm861         IBM277           windows-1257      iso-2022-jp
+ DOS-862        IBM278           windows-1258      csISO2022JP
+ IBM863         IBM280           Johab             iso-2022-jp
+ IBM864         IBM284           macintosh         iso-2022-kr
+ IBM865         IBM285           x-mac-japanese    x-cp50227
+ cp866          IBM290           x-mac-chinesetrad
+ ibm869         IBM297           x-mac-korean      EUC-CN
+ IBM870         IBM420           x-mac-arabic      euc-kr
+ windows-874    IBM423           x-mac-hebrew      hz-gb-2312
+ cp875          IBM424           x-mac-greek       GB18030
+ shift_jis      x-mac-cyrillic   x-iscii-de        x-iscii-be
+ gb2312         IBM-Thai         x-mac-chinesesimp
+ ks_c_5601-1987 koi8-r           x-mac-romanian    x-iscii-ta
+ big5           IBM871           x-mac-ukrainian   x-iscii-te
+ IBM1026        IBM880           x-mac-thai        x-iscii-as
+ IBM01047       IBM905           x-mac-ce          x-iscii-or
+ IBM01140       IBM00924         x-mac-icelandic   x-iscii-ka
+ IBM01141       EUC-JP           x-mac-turkish     x-iscii-ma
+ IBM01142       x-cp20936        x-mac-croatian    x-iscii-gu
+ IBM01143       x-cp20949        utf-32            x-iscii-pa
+ IBM01144       cp1025           utf-32BE          utf-7
+ IBM01145       koi8-u           x-Chinese-CNS     utf-8
+ x-EBCDIC-KoreanExtended         euc-jp
+ </remarks>
+</member>
+<member name="F:LDI.IniFile11.Parameter">
+ <summary>
+ データ構造を保持する Dictionary クラスです。
+ </summary>
+</member>
+<member name="M:LDI.IniFile11.#ctor(System.String,System.Boolean)">
+ <overloads>
+ </overloads>
+ <summary>
+ Initializes a new instance of the StreamReader class for the specified file name, with the specified character encoding.
+ </summary>
+ <param name="Path">The complete file path to be read.</param>
+ <remarks></remarks>
+ <example>The following code implements the examples from this section.
+ <code>
+    Dim ini As New IniFile11("C:\Users\Dev\Keyboard.ini")
+    Dim key As String = ini.GetVal("[Function][Player1]Space", "Shot")
+ </code>
+ </example>
+</member>
+<member name="M:LDI.IniFile11.GetVal``1(System.String,``0)">
+ <summary>
+ 指定されたキーに関連付けられている値を取得します。
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の値</param>
+ <returns>キー名に対応した値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+ <example>このサンプルは、<c>GetVal()</c> メソッドの呼び出し方法を示します。
+ <code>
+    Dim ini As New Ini11("C:\Users\Dev\Keyboard.ini")
+    Dim key As String = ini.GetVal("[Function][Player1]Space", "Shot")
+ </code>
+ </example>
+</member>
+<member name="M:LDI.IniFile11.SetVal``1(System.String,``0)">
+ <summary>
+ 指定されたキーに関連付けられた値を設定します。
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="Value">値</param>
+ <returns>キー名に対応した値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+ <example>このサンプルは、<c>SetVal()</c> メソッドの呼び出し方法を示します。
+ <code>
+    Dim ini As New Ini11("C:\Users\Dev\Keyboard.ini")
+    Dim key As String = ini.SetVal("[Function][Player1]Space", "Shot")
+ </code>
+ </example>
+</member>
+<member name="M:LDI.IniFile11.ReadString(System.String,System.String)">
+ <summary>
+ Retrieves a string from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の文字列</param>
+ <returns>型<see cref="T:System.String"/>キー名に対応した文字列</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+ <example>このサンプルは、<c>ReadString()</c> メソッドの呼び出し方法を示します。
+ <code>
+    Dim ini As New ini11("C:\Users\Dev\Keyboard.ini")
+    Dim key As String = ini.ReadString("[Function][Player1]Space", "Shot")
+ </code>
+ </example>
+</member>
+<member name="M:LDI.IniFile11.ReadInteger(System.String,System.Int32)">
+ <summary>
+ Retrieves a integer from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の整数値</param>
+ <returns>キー名に対応した整数値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadBoolean(System.String,System.Boolean)">
+ <summary>
+ Retrieves a boolean from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の真理値</param>
+ <returns>キー名に対応した真理値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadFloat(System.String,System.Double)">
+ <summary>
+ Retrieves a float from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の浮動小数点値</param>
+ <returns>キー名に対応した浮動小数点値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadFont(System.String,System.Drawing.Font)">
+ <summary>
+ Retrieves a font from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の Font</param>
+ <returns>キー名に対応した Font</returns>
+ <remarks>関連付けられている値が取得できなかった場合は既定の値が返ります。</remarks>
+ <example>
+ ' [Path]
+ ' Key = MS Gothic, 22
+ Dim f = ini.ReadFont("/Path/Key", New Font("Meiryo", 12))
+ </example>
+</member>
+<member name="M:LDI.IniFile11.ReadSize(System.String,System.Drawing.Size)">
+ <summary>
+ Retrieves a size from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定のサイズ</param>
+ <returns>キー名に対応したサイズ</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadPoint(System.String,System.Drawing.Point)">
+ <summary>
+ Retrieves a point from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="defaultValue">既定の座標</param>
+ <returns>キー名に対応した値</returns>
+ <remarks>関連付けられている値が取得できなかった場合と、NotBlank が真で戻り値が空の場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadRectangle(System.String,System.Drawing.Rectangle)">
+ <summary>
+ Retrieves a rectangle from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">Key Name</param>
+ <param name="defaultValue">Defaiult Value</param>
+ <returns>キー名に対応した値</returns>
+ <remarks>関連付けられている値が取得できなかった場合は既定の値が返ります。</remarks>
+</member>
+<member name="M:LDI.IniFile11.ReadColor(System.String,System.Drawing.Color)">
+ <summary>
+ Retrieves a color from the specified section in an initialization file.
+ </summary>
+ <param name="keyPath">Key Path</param>
+ <param name="defaultValue">
+ A default coloe. If the lpKeyName key cannot be found in the initialization file, ini11７ copies the default color to the return buffer.
+ If this parameter is NULL, the default is Color.Black.
+</param>
+ <returns>キー名に対応した Color 値</returns>
+ <remarks>If the lpKeyName key cannot be found in the initialization file, this function returns defaultValue.</remarks>
+ <example>
+ ' [Path]
+ ' Red = Red
+ ' Green = #008800
+ </example>
+</member>
+<member name="M:LDI.IniFile11.ReadKeyRegex(System.String,System.Int32)">
+ <summary>
+ Options パラメータに一致オプションを指定し、Pattern パラメータに指定した正規表現に一致するキー名をすべて検索します。
+ </summary>
+ <param name="Pattern">一致させる正規表現パターン</param>
+ <param name="Groupnum">Groupnum 番目のグルーピングを戻り値として得ます。既定は 0 です。</param>
+ <returns>検索された文字列の配列</returns>
+ <remarks></remarks>
+</member>
+<member name="M:LDI.IniFile11.WriteString(System.String,System.String)">
+ <summary>
+ 指定されたキーに文字列を設定します。
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="Value">文字列</param>
+ <returns>設定した文字列が返ります。</returns>
+ <remarks>Save メソッドが呼ばれるまでは、ファイルに書き込まれません。</remarks>
+</member>
+<member name="M:LDI.IniFile11.WriteInteger(System.String,System.Int32)">
+ <summary>
+ 指定されたキーに整数値を設定します。
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="Value">整数値</param>
+ <returns>設定した整数値が返ります。</returns>
+ <remarks>Save メソッドが呼ばれるまでは、ファイルに書き込まれません。</remarks>
+</member>
+<member name="M:LDI.IniFile11.WriteBoolean(System.String,System.Boolean)">
+ <summary>
+ 指定されたキーに真理値を設定します。
+ </summary>
+ <param name="keyPath">キー名</param>
+ <param name="Value">真理値</param>
+ <returns>設定した真理値が返ります。</returns>
+ <remarks>Save メソッドが呼ばれるまでは、ファイルに書き込まれません。</remarks>
+</member>
+<member name="M:LDI.IniFile11.Remove(System.String)">
+ <summary>
+ 指定したキーを持つパラメータを削除します。 
+ </summary>
+ <param name="keyPath">キー名</param>
+ <returns>パラメータが正常に削除された場合は true。それ以外の場合は false。このメソッドは、key が Dictionary に見つからない場合にも false  を返します。 </returns>
+ <remarks></remarks>
+</member>
+<member name="M:LDI.IniFile11.RemoveRegex(System.String)">
+ <summary>
+ 指定した正規表現に一致するキーを持つパラメータを削除します。 
+ </summary>
+ <param name="Pattern">一致させる正規表現パターン</param>
+ <returns>削除されたパラメータの件数。</returns>
+ <remarks></remarks>
+</member>
+<member name="M:LDI.IniFile11.Clear">
+ <summary>
+ すべてのキーと値を削除します。
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:LDI.IniFile11.Load(System.String)">
+ <summary>
+ 指定された .ini ファイルを読み込みます。
+ </summary>
+ <param name="Path">完全修飾名または相対ファイル名。</param>
+ <remarks></remarks>
+</member>
+<member name="M:LDI.IniFile11.Save(System.String)">
+ <summary>
+ 指定された .ini ファイルに書き込みます。
+ </summary>
+ <param name="Path">完全修飾名または相対ファイル名。</param>
+ <remarks></remarks>
+</member>
+<member name="T:LDI.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.Culture">
+<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.RW">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.Rx">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.xW">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+<member name="P:LDI.My.Resources.Resources.xx">
+<summary>
+  型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+</summary>
+</member>
+</members>
+</doc>
