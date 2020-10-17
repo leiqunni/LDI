@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Logical Disk Indicator")>
 <Assembly: AssemblyCompany("DarkEra Software")>
 <Assembly: AssemblyProduct("LDI Logical Disk Indicator")>
-<Assembly: AssemblyCopyright("Copyright (c) 793 ◆7BJkZFw08A / DarkEra Software 2012-2015")>
+<Assembly: AssemblyCopyright("Copyright (c) 793 ◆7BJkZFw08A / DarkEra Software 2012-2020")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -32,5 +32,5 @@ Imports System.Runtime.InteropServices
 ' 既定値にすることができます:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2015.10.18.0")>
-<Assembly: AssemblyFileVersion("2015.10.18.0")>
+<Assembly: AssemblyVersion("2020.10.17.0")>
+<Assembly: AssemblyFileVersion("2020.10.17.0")>
