@@ -28,3 +28,7 @@ C:\Users\leiqunni\Documents\Visual Studio 2015\Projects\LDI\LDI\bin\Debug\Sprach
 C:\Users\leiqunni\Documents\Visual Studio 2015\Projects\LDI\LDI\bin\Debug\Sprache.xml
 C:\Users\leiqunni\Documents\Visual Studio 2015\Projects\LDI\LDI\bin\Debug\Nett.Coma.dll
 C:\Users\leiqunni\Documents\Visual Studio 2015\Projects\LDI\LDI\bin\Debug\Nett.Coma.pdb
+C:\Users\leiqunni\Documents\GitHub\LDI\LDI\bin\Debug\LDI.exe.config
+C:\Users\leiqunni\Documents\GitHub\LDI\LDI\obj\x86\Debug\LDI.exe
+C:\Users\leiqunni\Documents\GitHub\LDI\LDI\obj\x86\Debug\LDI.xml
+C:\Users\leiqunni\Documents\GitHub\LDI\LDI\obj\x86\Debug\LDI.pdb

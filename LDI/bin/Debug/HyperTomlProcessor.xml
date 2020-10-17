@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HyperTomlProcessor</name>
+    </assembly>
+    <members>
+        <member name="T:HyperTomlProcessor.Toml">
+            <summary>
+            Provides methods for converting between <see cref="T:System.Xml.Linq.XElement"/> and TOML.
+            </summary>
+        </member>
+        <member name="P:HyperTomlProcessor.Toml.Version">
+            <summary>
+            Gets the TOML version.
+            </summary>
+        </member>
+        <member name="P:HyperTomlProcessor.Toml.V03">
+            <summary>
+            Gets the <see cref="T:HyperTomlProcessor.Toml"/> instance for TOML v0.3.0.
+            </summary>
+        </member>
+        <member name="P:HyperTomlProcessor.Toml.V04">
+            <summary>
+            Gets the <see cref="T:HyperTomlProcessor.Toml"/> instance for TOML v0.4.0.
+            </summary>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeXElement(System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Deserializes the TOML to an <see cref="T:System.Xml.Linq.XElement"/>.
+            </summary>
+            <param name="toml">The TOML string to deserialize.</param>
+            <returns>The deserialized <see cref="T:System.Xml.Linq.XElement"/>.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeXElement(System.IO.TextReader)">
+            <summary>
+            Deserializes the TOML to an <see cref="T:System.Xml.Linq.XElement"/>.
+            </summary>
+            <param name="reader">The <see cref="T:System.IO.TextReader"/> that contains the TOML to deserialize.</param>
+            <returns>The deserialized <see cref="T:System.Xml.Linq.XElement"/>.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeXElement(System.IO.Stream)">
+            <summary>
+            Deserializes the TOML to an <see cref="T:System.Xml.Linq.XElement"/>.
+            </summary>
+            <param name="stream">The stream that contains the TOML to deserialize.</param>
+            <returns>The deserialized <see cref="T:System.Xml.Linq.XElement"/>.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeXElement(System.IO.TextWriter,System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the <see cref="T:System.Xml.Linq.XElement"/> to TOML.
+            </summary>
+            <param name="writer">A <see cref="T:System.IO.TextWriter"/> to write the TOML content to.</param>
+            <param name="toml">The <see cref="T:System.Xml.Linq.XElement"/> to convert to TOML.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeXElement(System.IO.Stream,System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the <see cref="T:System.Xml.Linq.XElement"/> to TOML.
+            </summary>
+            <param name="stream">A stream to write the TOML content to.</param>
+            <param name="toml">The <see cref="T:System.Xml.Linq.XElement"/> to convert to TOML.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeXElement(System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the <see cref="T:System.Xml.Linq.XElement"/> to a TOML string.
+            </summary>
+            <param name="toml">The <see cref="T:System.Xml.Linq.XElement"/> to convert to TOML.</param>
+            <returns>A TOML string.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.IO.TextWriter,System.Object,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Serializes the specified object to TOML.
+            </summary>
+            <param name="writer">A <see cref="T:System.IO.TextWriter"/> to write the TOML content to.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.IO.Stream,System.Object,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Serializes the specified object to TOML.
+            </summary>
+            <param name="stream">A stream to write the TOML content to.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.Object,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Serializes the specified object to a TOML string.
+            </summary>
+            <param name="obj">The object to serialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+            <returns>A TOML string.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.IO.TextWriter,System.Object,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Serializes the specified object to TOML.
+            </summary>
+            <param name="writer">A <see cref="T:System.IO.TextWriter"/> to write the TOML content to.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.IO.Stream,System.Object,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Serializes the specified object to TOML.
+            </summary>
+            <param name="stream">A stream to write the TOML content to.</param>
+            <param name="obj">The object to serialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.SerializeObject(System.Object,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Serializes the specified object to a TOML string.
+            </summary>
+            <param name="obj">The object to serialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+            <returns>A TOML string.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.Xml.Linq.XElement,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="toml">The <see cref="T:System.Xml.Linq.XElement"/> that represents the TOML structure to deserialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.IO.TextReader,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="reader">The <see cref="T:System.IO.TextReader"/> that contains the TOML to deserialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.IO.Stream,System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="stream">The stream that contains the TOML to deserialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.Collections.Generic.IEnumerable{System.Char},System.Func{System.Runtime.Serialization.Json.DataContractJsonSerializer})">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="toml">The TOML string to deserialize.</param>
+            <param name="factory">
+            The function to make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.
+            if null, it will make a <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/> with default settings.
+            </param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.Xml.Linq.XElement,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="toml">The <see cref="T:System.Xml.Linq.XElement"/> that represents the TOML structure to deserialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.IO.TextReader,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="reader">The <see cref="T:System.IO.TextReader"/> that contains the TOML to deserialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.IO.Stream,System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="stream">The stream that contains the TOML to deserialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.Toml.DeserializeObject``1(System.Collections.Generic.IEnumerable{System.Char},System.Runtime.Serialization.Json.DataContractJsonSerializerSettings)">
+            <summary>
+            Deserializes the TOML to the specified type.
+            </summary>
+            <typeparam name="T">The type of the object to deserialize to.</typeparam>
+            <param name="toml">The TOML string to deserialize.</param>
+            <param name="settings">A <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings"/> to make the <see cref="T:System.Runtime.Serialization.Json.DataContractJsonSerializer"/>.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+        <member name="T:HyperTomlProcessor.DynamicToml">
+            <summary>
+            Represents a TOML table or array.
+            </summary>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.CreateTable">
+            <summary>
+            Make a <see cref="T:HyperTomlProcessor.DynamicToml"/> with the empty table.
+            </summary>
+            <returns>A <see cref="T:HyperTomlProcessor.DynamicToml"/> with the empty table.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.CreateArray">
+            <summary>
+            Make a <see cref="T:HyperTomlProcessor.DynamicToml"/> with the empty array.
+            </summary>
+            <returns>A <see cref="T:HyperTomlProcessor.DynamicToml"/> with the empty array.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Parse(HyperTomlProcessor.Toml,System.IO.TextReader)">
+            <summary>
+            Loads a <see cref="T:HyperTomlProcessor.DynamicToml"/> from a <see cref="T:System.IO.TextReader"/>.
+            </summary>
+            <param name="parser">A <see cref="T:HyperTomlProcessor.Toml"/> instance to parse with.</param>
+            <param name="reader">A <see cref="T:System.IO.TextReader" /> that will be read for the TOML content.</param>
+            <returns>A <see cref="T:HyperTomlProcessor.DynamicToml"/> that contains the TOML that was read from the specified <see cref="T:System.IO.TextReader"/>.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Parse(HyperTomlProcessor.Toml,System.IO.Stream)">
+            <summary>
+            Creates a new <see cref="T:HyperTomlProcessor.DynamicToml"/> instance by using the specified stream.
+            </summary>
+            <param name="parser">A <see cref="T:HyperTomlProcessor.Toml"/> instance to parse with.</param>
+            <param name="stream">The stream that contains the TOML data.</param>
+            <returns>An <see cref="T:HyperTomlProcessor.DynamicToml"/> object used to read the data that is contained in the stream.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Parse(HyperTomlProcessor.Toml,System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Load an <see cref="T:HyperTomlProcessor.DynamicToml"/> from a string that contains XML.
+            </summary>
+            <param name="parser">A <see cref="T:HyperTomlProcessor.Toml"/> instance to parse with.</param>
+            <param name="toml">A string that contains TOML.</param>
+            <returns>A <see cref="T:HyperTomlProcessor.DynamicToml"/> populated from the string that contains TOML.</returns>
+        </member>
+        <member name="P:HyperTomlProcessor.DynamicToml.IsObject">
+            <summary>
+            Gets a value indicating whether the <see cref="T:HyperTomlProcessor.DynamicToml"/> represents a table.
+            </summary>
+        </member>
+        <member name="P:HyperTomlProcessor.DynamicToml.IsArray">
+            <summary>
+            Gets a value indicating whether the <see cref="T:HyperTomlProcessor.DynamicToml"/> represents an array.
+            </summary>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.IsDefined(System.String)">
+            <summary>
+            Determines whether the specified key has been defined.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if the property named the specified key has been defined.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.IsDefined(System.Int32)">
+            <summary>
+            Determines whether the element of the specified index has been defined.
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if the element has been defined.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Delete(System.String)">
+            <summary>
+            Deletes the property.
+            </summary>
+            <param name="key">The key.</param>
+            <returns><c>true</c> if the element is successfully found and removed.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Delete(System.Int32)">
+            <summary>
+            Deletes the element.
+            </summary>
+            <param name="index">The index.</param>
+            <returns><c>true</c> if the element is successfully found and removed.</returns>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Add(System.Object)">
+            <summary>
+            Adds the specified value.
+            </summary>
+            <param name="obj">The value of the element to add.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.Add(System.String,System.Object)">
+            <summary>
+            Adds the specified key and value.
+            </summary>
+            <param name="key">The key of the element to add.</param>
+            <param name="obj">The value of the element to add.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.WriteTo(HyperTomlProcessor.Toml,System.IO.TextWriter)">
+            <summary>
+            Writes the content of <see cref="T:HyperTomlProcessor.DynamicToml"/> to the specified <see cref="T:System.IO.TextWriter"/>.
+            </summary>
+            <param name="toml">A <see cref="T:HyperTomlProcessor.Toml"/> instance to write with.</param>
+            <param name="writer">The <see cref="T:System.IO.TextWriter"/> to write this <see cref="T:HyperTomlProcessor.DynamicToml"/> to.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.WriteTo(HyperTomlProcessor.Toml,System.IO.Stream)">
+            <summary>
+            Writes the content of <see cref="T:HyperTomlProcessor.DynamicToml"/> to the specified stream.
+            </summary>
+            <param name="toml">A <see cref="T:HyperTomlProcessor.Toml"/> instance to write with.</param>
+            <param name="stream">The stream to write this <see cref="T:HyperTomlProcessor.DynamicToml"/> to.</param>
+        </member>
+        <member name="M:HyperTomlProcessor.DynamicToml.ToString">
+            <summary>
+            Returns the TOML for this element.
+            </summary>
+            <returns>A <see cref="T:System.String"/> containing the TOML.</returns>
+        </member>
+        <member name="T:HyperTomlProcessor.TomlVersion">
+            <summary>
+            Specifies the version of TOML.
+            </summary>
+        </member>
+        <member name="F:HyperTomlProcessor.TomlVersion.V03">
+            <summary>
+            TOML v0.3.0
+            </summary>
+        </member>
+        <member name="F:HyperTomlProcessor.TomlVersion.V04">
+            <summary>
+            TOML v0.4.0
+            </summary>
+        </member>
+    </members>
+</doc>
